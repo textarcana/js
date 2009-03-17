@@ -1,0 +1,29 @@
+<script type=text/javascript>
+var iRandom;
+function Restart()
+{
+iRandom = Math.floor(Math.random()*10)+1;
+alert('OK, I am thinking of a number between 1 and 10');
+}
+function Guess()
+{
+var yourGuess = document.getElementById('myGuess').value;
+if (yourGuess>iRandom)
+	alert('Too High.');
+if (yourGuess<iRandom)
+	alert('Too Low.');
+if (yourGuess==iRandom)
+	{
+	alert('Well done! You guessed it.');
+	Restart();
+	}
+}
+</script>
+<div>Enter your guess between 1 and 10: <input type=text id='myGuess' name='myGuess'>
+<input type='button' onClick='Guess()' value='Guess'>
+<br>
+<br>
+<input type='button' onClick='Restart()' value='Start Again'>
+<script type=text/javascript>
+Restart();
+</script>

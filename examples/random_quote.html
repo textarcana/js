@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+			"http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+
+<!-- 
+NOAH SUSSMAN
+
+The Random Quote popup window for Netscape users.  Contains an exact copy of the randomQuote() script because Mac NS can't use an external js file.
+
+The path to this document is : ROOT 
+-->
+
+	<title>Random Quote</title>
+	<style type="text/css">
+<!--
+
+body{
+	margin : 0px ;
+	background-color : #000000 ;
+}
+
+.text, .small{
+	font-family : arial, helvetica, sans-serif ;
+	font-size : 100% ;
+	color : #ffffff ;
+	}
+	
+.small{
+	font-size : 80% ;
+	}
+	
+-->
+</style>
+
+	<script language="JavaScript"><!--
+function randomQuote(){
+
+	var theQuote = new String() ;    //A place to store the randomly selected quote.
+	
+	var pickOne = -1 ;    //A randomly generated number which will be used to select a quote.
+
+	var theArray = new Array();
+	theArray[0] = "\"You can't uninstall evil.\"<br><br>	&#151; <a href=\"http://www.penny-arcade.com/mortyr.shtml\"><i>Penny Arcade<\/i><\/a>";
+	theArray[1] = "\"We are prepared for any unforeseen events which may or may not occur\"	<br><br>	&#151; Governer George W. Bush, Jr";
+	theArray[2] = "\"We don't know if these ideas are right, but they are revolutionary...\"	<br><br>	&#151; E. Adelberger";
+	theArray[3] = "\"In the beginning was the word, and the word was RAIN\"";
+	theArray[4] = "\"Never attribute to Malice that which can be adequately explained by Stupidity.\"<br><br>	&#151; <a href=\"http://www.science.uva.nl/~mes/jargon/h/hanlonsrazor.html\">The Jargon File<\/a>";
+	theArray[5] = "\"GET OUT OF MY LABORATORY!\"   <br><br>	&#151; Dexter";
+	theArray[6] = "\"Moving Heaven and Earth without effort is simply a matter of concentration.\"<br><br>	&#151; <i>Hagakure<\/i>";
+	theArray[7] = "\"There is nothing more deceptive than an obvious fact.\"<br><br>	&#151; Sherlock Holmes";
+	theArray[8] = "\"When you have excluded the impossible, whatever remains, however improbable, must be the truth.\"<br><br>	&#151; Sherlock Holmes";
+	theArray[9] = "\"When the going gets weird, the weird turn pro.\"<br><br>	&#151; Hunter S. Thompson"; 
+	theArray[10] = "\"The purposeful destruction of information is the essence of intelligent work.\"<br><br>	&#151; Ray Kurzweil";
+	theArray[11] = "\"Will you be afraid?\" asked Lyra.  \"Yes,\" said the bear,\" but when that time comes, I will master my fear.\"<br><br>	&#151; From <i>The Golden Compass<\/i> by Philip Pullman";
+	theArray[12] = "\The problem with intelligent communication is the illusion that it has taken place.\"<br><br>	&#151; George Bernard Shaw";
+	theArray[13] = "\"But isn't this what always happens? You build a thing of beauty and in time the peasants storm the castle wall, hooting and chanting because they've decided you're a heretic. Which is true, of course.\"<br><br>	&#151; Vic Sussman";
+	theArray[14] = "\"Color is a degree of darkness, allied to shadow.\"<br><br>	&#151; Goethe";
+	theArray[15] = "\"No publisher will ever pay you enough to successfully sue them.\"<br><br>	&#151; Dave Sim";
+	theArray[16] = "\"The first 90% of the code accounts for the first 90% of the development time. The remaining 10% of the code accounts for the other 90% of the development time.\"<br><br>	&#151; <a href=\"http://www.science.uva.nl/~mes/jargon/n/ninetyninetyrule.html\"><i>Tom Cargill<\/i><\/a>";
+	theArray[17] = "\"Chaos reigns within.<BR>Reflect, repent, and reboot.<BR>Order shall return.\"<br><br>	&#151; Anonymous";
+	theArray[18] = "\"A crash reduces<BR>your expensive computer<BR>to a simple stone.\"<br><br>	&#151; Anonymous";
+	theArray[19] = "\"Stay the patient course<BR>Of little worth is your ire<BR>The network is down.\"<br><br>	&#151; Anonymous";
+	theArray[20] = "\"The Tao that is seen<BR>Is not the true Tao, until<BR>You bring fresh toner.\"<br><br>	&#151; Anonymous";
+	theArray[21] = "\"First snow, then silence.<BR>This thousand dollar screen dies<BR>so beautifully.\"<br><br>	&#151; Anonymous";
+	theArray[22] = "\"The Three Virtues of Programming are laziness, impatience and hubris.\"<br><br>	&#151; Larry Wall";
+	theArray[23] = "\"Nothing ever gets built on schedule or within budget.\"<br><br>	&#151; <a href=\"http://www.inftech.ru/comedy/murphy/mur00472.htm\">Cheop's Law<\/a>";
+	theArray[24] = "\"Assigning more staff to a late project makes it later.\"<br><br>	&#151; <a href=\"http://www.science.uva.nl/~mes/jargon/b/brooksslaw.html\">Brooks' Law<\/a>";
+	theArray[25] = "\"If there are two or more ways to do something, and one of those ways can result in a catastrophe, then someone will do it.\"<br><br>	&#151; <a href=\"http://www.science.uva.nl/~mes/jargon/m/murphyslaw.html\">Murphy's Law<\/a>";
+	theArray[26] = "\"This gubblick contains many nonsklarkish English flutzpahs, but the overall pluggandisp can be glorked from context\"<br><br>	&#151; <a href=\"http://www.science.uva.nl/~mes/jargon/g/glark.html\">David Moser<\/a>";
+	theArray[27] = "\"We are here on Earth to do good to others.  What the others are here for, I don't know.\"<BR><BR>	&#151; W.H. Auden";
+	theArray[28] = "\"There isn't an Internet company in the world that's going to fail because of mistakes -- Internet companies make thousands of mistakes every week.\"<BR><BR>	&#151; <a href=\"http://www.ecompany.com/edit/0,2088,11274,00.html\">Candice Carpenter, CEO of iVillage<\/a>";
+	theArray[29] = "\"90% of the time the documentation is lost.  9% of the time the revision of the documentation is different from the revision of the program.  The 1% of the time you actually have the correct revision of the documentation, it will be written in Japanese.\"<BR><BR>	&#151; Oualline's Law";
+	theArray[30] = "\"With a phonograph it is now possible to control...any one of these sounds and give to it rhythms within or beyond the reach of imagination. Given four phonographs we can compose and perform a quartet for explosive motor, wind, heartbeat, and landslide.\"<BR><BR>	&#151; John Cage, <i>The Future of Music: Credo<\/i>, 1937";
+	theArray[31] = "\"If that is the way it must be done, then that is the way you must do it.\"<BR><BR>	&#151; Sir Diddimus";
+	theArray[32] = "\"Lesser artists borrow, great artists steal.\"<BR><BR>	&#151; Igor Stravinsky";
+	theArray[33] = "\"I have pledged my life to help you in your search for a mind. It will be a long and difficult task, but I will not rest until I have filled the gaping hole in your head.\"<BR><BR>	&#151; Dexter";
+	theArray[34] = "\"There is <i>always<\/i> one more bug.\"<BR><BR>	&#151; <a href=\"http://www.science.uva.nl/~mes/jargon/l/lubarskyslawofcyberneticentomology.html\">Lubarsky's Law<\/a>";
+	theArray[35] = "\"Sure, 90% of science fiction is crud. That's because 90% of <i>everything<\/i> is crud.\"<BR><BR>	&#151; <a href=\"http://www.science.uva.nl/~mes/jargon/s/sturgeonslaw.html\">Theodore Sturgeon<\/a>";
+	theArray[36] = "\"Data expands to fill the space available for storage.\"<BR><BR>	&#151; <a href=\"http://www.science.uva.nl/~mes/jargon/p/parkinsonslawofdata.html\">Parkinson's Law<\/a>";
+	theArray[37] = "\"Man will occasionally stumble over the truth but most of the time he will pick himself up and continue on.\"<BR><BR>	&#151; <a href=\"http://www.inftech.ru/comedy/murphy/mur00480.htm\">Winston Churchill<\/a>";
+	theArray[38] = "\"A foolish consistency is the hobgoblin of little minds.\"<BR><BR>	&#151; Emerson";
+	theArray[39] = "\"Any sufficiently advanced technology is indistinguishable from magic.\"<BR><BR>	&#151; Clarke's Third Law";
+	theArray[40] = "\"The inevitable result of improved and enlarged communications between different levels in a hierarchy is a vastly increased area of misunderstanding.\"<BR><BR>	&#151; <a href=\"http://www.inftech.ru/comedy/murphy/mur00492.htm\">Murphy's Law of Communication<\/a>";
+	theArray[41] = "\"Nature will tell you a direct lie if she can.\"<BR><BR>	&#151; <a href=\"http://www.inftech.ru/comedy/murphy/mur00505.htm\">Charles Darwin<\/a>";
+	theArray[42] = "\"Unexpected invitations to travel are dancing lessons from god.\"<BR><BR>	&#151; Bokonon";
+	theArray[43] = "\"If you put tomfoolery into a computer, nothing comes out but tomfoolery. But this tomfoolery, having passed through a very expensive machine, is somehow ennobled, and no one dares to criticize it.\"<BR><BR>	&#151; <a href=\"http://www.inftech.ru/comedy/murphy/mur00562.htm\">Gallois' Law<\/a>";
+	theArray[44] = "\"At the source of every error which is blamed on the computer you will find at least two human errors, including the error of blaming it on the computer.\"<BR><BR>	&#151; <a href=\"http://www.inftech.ru/comedy/murphy/mur00565.htm\">Gilb's Law<\/a>";
+	theArray[45] = "\"The secret of success is sincerity. Once you can fake that you've got it made.\"<BR><BR>	&#151; <a href=\"http://www.inftech.ru/comedy/murphy/mur00571.htm\">Glyme's Maxim<\/a>";
+	theArray[46] = "\"Undetectable errors are infinite in variety, in contrast to detectable errors, which by definition are limited.\"<BR><BR>	&#151; <a href=\"http://www.inftech.ru/comedy/murphy/mur00568.htm\">Gilb's Fourth Law<\/a>";
+	theArray[47] = "\"The first myth of management is that it exists.\"<BR><BR>	&#151; <a href=\"http://www.inftech.ru/comedy/murphy/mur00595.htm\">Heller's Law<\/a>";
+	theArray[48] = "\"Machines should work. People should think.\"<BR><BR>	&#151; <a href=\"http://www.inftech.ru/comedy/murphy/mur00610.htm\">The IBM Principle<\/a>";
+	theArray[49] = "\"A poet who reads his verse in public may have other nasty habits.\"<BR><BR>	&#151; <a href=\"http://www.inftech.ru/comedy/murphy/mur00677.htm\">Long's Maxim<\/a>";
+	theArray[50] = "\"The person who creates it is forgotten.<br>The person who fixes it is immortalized.\"<BR><BR>	&#151; <a href=\"http://www.inftech.ru/comedy/murphy/mur00720.htm\">Mayo's Law<\/a>";
+	theArray[51] = "\"It is easier to get forgiveness than permission.\"<BR><BR>	&#151; <a href=\"http://www.inftech.ru/comedy/murphy/mur00959.htm\">Stewart's Maxim<\/a>";
+	theArray[52] = "\"Any sufficiently advanced magic is indistinguishable from technology.\"<BR><BR>	&#151; corollary to Clarke's Third Law";	
+
+
+	//theArray[] = "\"\"<br><br>	&#151; ";
+	
+	while ((pickOne < 0)||(pickOne == theArray.length)) {   
+	// Guard against the empty element that lurks at the end of JavaScript arrays.
+	
+		pickOne =  Math.round(Math.random()*(theArray.length)) ;    
+		// Pick a number at random.
+		
+		theQuote = theArray[pickOne] ;    
+		// Use the number to call the quote from the array.
+	
+	}
+	
+	
+	document.write(theQuote);  // Print the quote
+
+}
+
+//--></script>
+
+</head>
+<BODY LINK="#FFFFFF" VLINK="#CC0033" ALINK="#00FF33" MARGINHEIGHT="0" MARGINWIDTH="0">
+<br>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 width="210" align="center">
+	<TR>
+		<TD class="text"><script language = "JavaScript">randomQuote();</script><br><br><br><CENTER>
+<span class="small"><a href="javascript: document.location.reload();">Random Quote</a></span></CENTER></TD>
+	</TR>
+</TABLE>
+</body>
+</html>

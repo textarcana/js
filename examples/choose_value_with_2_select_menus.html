@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<!--** Time-stamp: <[choose_value_with_2_select_menus.html] was last modified by Noah Sussman at 13:51:08 on 2006.11.06 on NYC0111031878> **-->
+<title>Choose a value with two select menus</title>
+</head>
+<body>
+<h1>Choose a value with two select menus</h1>
+<p>This is a response to <a href="http://groups.google.com/group/comp.lang.javascript/browse_frm/thread/f2fa187650616d35/271534cd9095e6fe#271534cd9095e6fe" >this post on comp.lang.javascript.</a></p>
+
+<script type="text/javascript">
+var sendFromTo = {
+  Alaska : {
+    Alaska : "local mail",
+    Alabama : "FedEx"
+  },
+  Alabama: {
+    Alaska : "UPS",
+    Alabama : "pony express"
+  }
+}
+
+function getShippingMethod () {
+  var firstMenu = document.forms[0].elements[0];
+  var secondMenu = document.forms[0].elements[1];
+  if (firstMenu.selectedIndex != 0 && secondMenu.selectedIndex !=0) {
+    var from = firstMenu[firstMenu.selectedIndex].text;
+    var destination = secondMenu[secondMenu.selectedIndex].text;
+    var msg = sendFromTo[from][destination];
+    document.getElementById('youChose').innerHTML = msg;
+  }
+}
+</script>
+
+<form>
+Ship From:
+<select onchange="getShippingMethod()">
+  <option>Select a state</option>
+  <option>Alaska</option>
+  <option>Alabama</option>
+</select>
+<br>
+Send To:
+<select onchange="getShippingMethod()">
+  <option>Select a state</option>
+  <option>Alaska</option>
+  <option>Alabama</option>
+</select>
+</form>
+
+<div>Send by method: <span id="youChose"><em style="color:#ccc;">No method selected</em></span></div>
+</body>
+</html>

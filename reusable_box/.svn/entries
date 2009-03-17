@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="7"
+   name=""
+   committed-date="2008-01-17T04:54:09.442220Z"
+   url="file:///home/7880/data/n_s/trunk/work/www/onemorebug.com/meme.washer/code_examples/reusableBox"
+   last-author="onemorebug.com"
+   kind="dir"
+   uuid="fce4a8fc-e143-0410-a4fe-fa9d1212f106"
+   revision="155"/>
+<entry
+   name="images"
+   kind="dir"/>
+<entry
+   committed-rev="7"
+   name="index.html"
+   text-time="2008-03-05T13:07:55.000000Z"
+   committed-date="2008-01-17T04:54:09.442220Z"
+   checksum="31bd9fa9f5d5c39996cd51d10675aa2d"
+   last-author="onemorebug.com"
+   kind="file"
+   prop-time="2008-03-05T13:07:55.000000Z"/>
+</wc-entries>

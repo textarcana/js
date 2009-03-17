@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<!--** Time-stamp: <[box.html] modified by Noah Sussman on Saturday, 2007.04.07 at 12 : 55 : 42 on GRIMOIRE> **-->
+<title>Reusable Box (sliding doors)</title>
+<style type="text/css">
+/****************************************************************
+** Reusable Box
+** This is an image-based box design, which allows arbitrary 
+** expansion up to the width and height of its component images.
+** See the "Sliding Doors of CSS" series of articles at A List Apart
+** for in-depth explanation.
+** Note that I have not actually implemented "Slding Doors," as the 
+** markup here is anything but semantic.
+****************************************************************/
+body { background: url(images/mars.png) }
+.reusableBox { 
+    background: url(images/left.png) no-repeat;
+    margin-left: -10px;  /* Using a negative margin to avoid overlap of transparent images. I learned to do this by reading css-discuss. NS 2007.04.06 */
+    position: absolute;
+ }
+.reusableBox .presentationTop { 
+    background: url(images/top.png) no-repeat top right;
+    margin-left: 10px;
+/*     padding-top: 10px; */
+ }
+.reusableBox .rbContent { 
+    padding-top: 20px;
+    padding-left: 10px;  /* another 10px is added by the margin of presentationTop */
+    padding-right: 20px;
+    position: relative;
+ }
+.reusableBox .presentationBottom { 
+    height: 10px;
+    background: url(images/bottom.png) no-repeat bottom right;
+    position: relative;
+    top: 10px;
+}
+.reusableBox .presentationLeftBottom { 
+    height: 10px;
+    width: 10px;
+    margin-left: -10px;
+    margin-bottom: -10px;
+    background: url(images/bottom.png) no-repeat top left;
+    position: relative;
+ }
+.reusableBox .rbNipple { 
+    background: url(images/nipple.png) no-repeat;
+    width: 15px;
+    height: 11px;
+    position: absolute;
+    top: 4px;
+    left: 22px;
+ }
+.rbSource {  display: none; } /* this line is optional */
+/* styles below here apply to the example implementations */
+div#foo { 
+    width: 320px; /* set the width of each box by its id */
+    top: 40px;
+    left: 500px;
+    position: relative;
+ } 
+div#downBalloon { 
+    width: 200px;
+    top: 110px;
+    left: 740px;
+    position: relative;
+ }
+div#downBalloon .rbNipple { 
+    left: 134px;
+ }
+p { display: inline; } /* optional */
+code { display: block; padding: .3em; } /* optional */
+</style>
+<script type="text/javascript">
+function makeWeb2Box(elId, width, top, left, hasNipple, nippleOffset) {
+  var el = document.getElementById(elId);
+  var elContainer = document.createElement('div');
+  elContainer.className="reusableBox";
+  elContainer.style.width = width;
+  elContainer.style.top = top;
+  elContainer.style.left = left;
+  
+  var offset = (nippleOffset ? 'style="left: '+ nippleOffset +'px"' : '');
+  var nipple = (hasNipple ? '<div class="rbNipple"' + offset + '></div>' : '');
+
+  elContainer.innerHTML = '<div class="presentationTop"><div class="rbContent">' +
+  el.innerHTML + 
+  '</div><div class="presentationBottom"><div class="presentationLeftBottom">' +
+nipple +
+'</div></div></div>';
+  el.parentNode.insertBefore(elContainer, el);
+  el.parentNode.removeChild(el);
+}
+
+window.onload = function() {
+  makeWeb2Box('bar', 400, 10, 40, true, 102);
+  makeWeb2Box('jsBox', 200, 300, 400);
+}
+</script>
+</head>
+<body>
+
+<!-- snippet #1 -->
+<div class="reusableBox" id="foo">
+<div class="presentationTop">
+<div class="rbContent">
+<!-- snippet #1 ends -->
+
+<p>Reusable box built with css </p>
+
+<!-- snippet #2 -->
+</div><!-- end of rbContent -->
+<div class="presentationBottom">
+<div class="presentationLeftBottom">
+</div><!-- end of presentationLeftBottom -->
+</div><!-- end of presentationBottom -->
+</div><!-- end of presentationTop -->
+</div><!-- end of reusableBox -->
+<!-- snippet #2 ends -->
+
+
+<div class="reusableBox" id="downBalloon">
+<div class="presentationTop">
+<div class="rbContent">
+<h3>mars</h3>
+<p>this is a popup built with css</p>
+</div><!-- end of rbContent -->
+<div class="presentationBottom">
+<div class="presentationLeftBottom">
+</div><!-- end of presentationLeftBottom -->
+<div class="rbNipple"></div>
+</div><!-- end of presentationBottom -->
+</div><!-- end of presentationTop -->
+</div><!-- end of reusableBox -->
+
+
+<div id="bar" class="rbSource">
+<p>Reusable balloon, built with JavaScript.
+<code>
+makeWeb2Box(someId (string), width (integer), top (integer), left (integer), [hasPointer (boolean), pointerPosition (integer)])
+</code>
+Turns the hidden div named 'someId' into a popup, 
+with or without a pointer (the default is no pointer).  
+If a pointer is specified, optionally set the left position 
+of the pointer image (the default is set in the CSS).
+</p>
+</div>
+
+<div id="jsBox" class="rbSource">
+<p>This is a box (not a balloon, because the pointer is omitted).  This box has been built with JavaScript.</p>
+</div>
+
+</body> 
+</html>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="7"
+   name=""
+   committed-date="2008-01-17T04:54:09.442220Z"
+   url="file:///home/7880/data/n_s/trunk/work/www/onemorebug.com/meme.washer/code_examples/reusableBox/images"
+   last-author="onemorebug.com"
+   kind="dir"
+   uuid="fce4a8fc-e143-0410-a4fe-fa9d1212f106"
+   revision="155"/>
+<entry
+   committed-rev="7"
+   name="thrashbox.png"
+   text-time="2008-03-05T13:07:55.000000Z"
+   committed-date="2008-01-17T04:54:09.442220Z"
+   checksum="01f3eb73bfa283d70c8f65398ebce06c"
+   last-author="onemorebug.com"
+   kind="file"
+   prop-time="2008-03-05T13:07:55.000000Z"/>
+<entry
+   committed-rev="7"
+   name="top.png"
+   text-time="2008-03-05T13:07:55.000000Z"
+   committed-date="2008-01-17T04:54:09.442220Z"
+   checksum="bdeb92c8ae77f44e3ba5256a3cef35e5"
+   last-author="onemorebug.com"
+   kind="file"
+   prop-time="2008-03-05T13:07:55.000000Z"/>
+<entry
+   committed-rev="7"
+   name="bottom.png"
+   text-time="2008-03-05T13:07:55.000000Z"
+   committed-date="2008-01-17T04:54:09.442220Z"
+   checksum="9bb9b21beceb4ce6688c786d30a53f08"
+   last-author="onemorebug.com"
+   kind="file"
+   prop-time="2008-03-05T13:07:55.000000Z"/>
+<entry
+   committed-rev="7"
+   name="nipple.png"
+   text-time="2008-03-05T13:07:55.000000Z"
+   committed-date="2008-01-17T04:54:09.442220Z"
+   checksum="2eac4d2273c9ff8d7c4246208c3e62eb"
+   last-author="onemorebug.com"
+   kind="file"
+   prop-time="2008-03-05T13:07:55.000000Z"/>
+<entry
+   committed-rev="7"
+   name="left.png"
+   text-time="2008-03-05T13:07:55.000000Z"
+   committed-date="2008-01-17T04:54:09.442220Z"
+   checksum="c41265a15cbe7d1957f2bc452db75e9e"
+   last-author="onemorebug.com"
+   kind="file"
+   prop-time="2008-03-05T13:07:55.000000Z"/>
+</wc-entries>

@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<!--** Time-stamp: <[e:/Gandalf/n20/set_a_nested_DOM_property_with_square_bracket_notation.html] was last modified by N.S. at 09:09:46 on 2006.06.06 on GRIMOIRE> **-->
+<title>set a nested DOM property with square bracket notation: Noah Sussman: Onemorebug.com</title>
+<script>
+
+function setNestedProperty(obj, propertyName, propertyValue){ 
+  var thePointer = obj;
+  for (var i=0; i<propertyName.length; i++){
+    alert('Setting the pointer to: ' + thePointer);
+    //with each iteration we get closer to the property we want to set, until:
+    if (i == (propertyName.length - 1)){
+      alert('Accessing the method the pointer points to\n and changing the value of the property named "' + propertyName[i] + '," to: "' + propertyValue +'"');
+      thePointer[propertyName[i]] = propertyValue;
+      return;
+    }
+    thePointer = thePointer[propertyName[i]];
+  }
+}
+
+
+</script>
+
+</head>
+<body onload="setNestedProperty(document, ['body','style','backgroundColor'], 'black')">
+
+</body>
+</html>

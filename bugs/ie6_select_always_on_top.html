@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<!--** Time-stamp: <[select_menu_always_on_top_in_IE.html] was last modified at 11:54:11 on 2007.06.13 on 5M8DLC1-NYO> **-->
+<title>Select Menu Always On Top In IE 6- : bugs</title>
+<style type="text/css">
+#shelbyville{ 
+    background: orange;
+    height: 400px;
+    width: 400px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    z-index: 2;
+ }
+form { 
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    display: block;
+    z-index: 1;
+ }
+input,
+select { 
+    width: 500px;
+ }
+#explain { 
+    position: absolute;
+    top: 420px;
+    left: 10px;
+    width: 600px;
+ }
+</style>
+</head>
+<body>
+<div id="shelbyville"></div>
+<form action="return false;">
+<input value="" />
+<p/>
+<select>
+<option>homer</option>
+<option>marge</option>
+<option>bart</option>
+<option>lisa</option>
+</select>
+<form>
+<div id="explain">
+<h1>Select Menu Always On Top In IE 6-</h1>
+<p>The orange box has a z-index of 2, while the form has a z-index of 1.  </p>
+<p>IE 7 and all non-IE browsers, the orange box overlays the entire form, as expected</p>
+<p>However, in IE 6 and lower
+, the select menu appears on top of the orange box, despite its having a lower z-index.  There is no known fix for this bug, although there are workarounds.</p>
+<p>The usual workaround is to hide select menus on the page when the select menu is active.  However, in practice this always causes slight "jumping" of page content when the menus are switched in and out.</p>
+<p>The preferred solution is to restrict the placement of select menus to positions where they will not be overlapped by other layers.</p>
+</div>
+</body>
+</html>

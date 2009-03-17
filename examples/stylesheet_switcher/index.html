@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<!--** Time-stamp: <[index.html] last modified by N. Sussman at 17:42:53 on Friday, July 27, 2007 using iLab workstation 5M8DLC1-NYO> **-->
+<title>Stylesheet Switcher : Interactive Prototypes : iLab</title>
+<link rel="stylesheet" href="" id="myMagicSheet" />
+<style type="text/css">
+li { 
+    cursor: pointer;
+    text-decoration: underline;
+    color: blue;
+ }
+</style> 
+
+<script type="text/javascript">
+
+   window.onload = function(){
+
+   var mySheet = document.getElementById('myMagicSheet');
+
+   if (location.search.indexOf('ss=foo') != -1) {
+     mySheet.href = 'foo.css';
+   } else if (location.search.indexOf('ss=bar') != -1) {
+     mySheet.href = 'bar.css';
+   }
+
+   var linx = document.getElementsByTagName('li');
+   for (var i=0; i<linx.length; i++){
+     linx[i].onclick = function () {
+       var queryString = location.search.replace(/\&ss=[^\&]*/g, '');  //get rid of old stylesheet pram, if any
+       if (queryString == '') queryString = '?';
+       location = location.protocol + '//' + location.hostname + location.pathname + queryString + '&ss=' + this.getAttribute('rel');
+     }
+   }
+
+ }
+
+</script>
+
+</head>
+<body>
+<h1>Stylesheet Switcher</h1>
+<p>This is a POC of a stylesheet switching behavior, similar to that found at CSS Zen Garden.</p>
+<p>When you click one of the links below, the page should reload, and a different stylesheet will be loaded.</p>
+<!-- note that I have not used real links, because you don't ever go to a URL after clicking these... -->
+<ul>
+<li rel="foo.css">Red Text</li>
+<li rel="bar.css">Green Text</li>
+  </ul>
+
+</body>
+</html>
+<!-- ?happyland=candymountain&ss=bar.css&frodo=hobbit  -->

@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<!--** Time-stamp: <[e:/Gandalf/web/code_examples/aboveTheFold_javascript.html] was last modified by N.S. at 08:13:26 on 2006.06.05 on GRIMOIRE> **-->
+<title>Keep an element above the fold with JavaScript: Noah Sussman: Onemorebug.com</title>
+
+<style type="text/css">
+<!--
+
+#detail{ 
+    position:absolute; 
+    left: 100px;
+    top: 107px; 
+    width: 300px; 
+    height:200px;  
+    overflow: visible;
+    z-index:1; 
+    background-color: #FFFFFF; 
+    layer-background-color: #FFFFFF; 
+    border: 1px solid #999999;
+    visibility:hidden;
+    padding: 4px;
+ }
+	
+-->
+</style>
+
+<script language="JavaScript" TYPE="text/javascript">
+<!--
+
+var showHide = new Array(); //a collection of counters
+
+var detailHeight = 200;  //set this to the hardcoded height of the DISPLAY div
+
+/* some dummy content */
+
+var contenta = "If we shadows have offended, think but this, and all is mended. That you have but slumbered here, while these visions did appear, and this weak and idle theme, no more yielding but a dream. Gentles, do not reprehend. If you pardon, we will mend. Else the Puck a liar call. And so good night unto you all. Give me your hands, if we be friends, and Robin shall restore amends. ";
+
+var contentb = "Lines of light ranged in the nonspace of the mind.  Clusters and constellations of data, like city lights, receding.  -- Gibson";
+
+var contentc = "I should be bounded in a nutshell and count myself a king of infinite space, were it not that I have bad dreams.";
+
+/*function debug(someId) { 
+  document.getElementById('debug').innerHTML = showHide[someId]; 
+  }*/
+
+function setVerticalPosition(someId, elTop) {  //set the vertical position of an element
+  //These extra variables are a necessary workaround, see http://www.quirksmode.org/js/cross_dhtml.html
+  var topz= elTop;
+  document.getElementById(someId).style.top = topz;
+}
+
+function positionElOnscreen(someId, elTop, elHeight) {
+  var topz= elTop;
+  var heightz= elHeight;
+  topz = (document.body.clientHeight - (heightz + 20));
+  document.getElementById(someId).style.top = topz;
+}
+
+function aboveTheFold (someId, elTop, elHeight) {
+  if (document.body.clientHeight < (elTop + elHeight)) {
+    positionElOnscreen(someId, elTop, elHeight);
+  }
+}
+
+function show(someId, content, elTop) {
+  showHide[someId] = true;
+  document.getElementById(someId)._defaultTopPosition = elTop;
+  setTimeout((function(){ if(showHide[someId]) {document.getElementById('detail').innerHTML=content; document.getElementById('detail').style.visibility="visible";   setVerticalPosition('detail', elTop, detailHeight); aboveTheFold('detail', elTop, detailHeight);  }}), 250);
+  //  debug();
+}
+
+function hide(someId, elTop) {
+  showHide[someId] = false;
+  document.getElementById('detail').innerHTML="";
+  //setVerticalPosition('detail', document.getElementById(someId)._defaultTopPosition, detailHeight);
+  //The above line assures that the element will appear in the right place next time it is clicked
+  document.getElementById('detail').style.visibility="hidden";
+  //  debug();
+}
+
+
+
+//-->
+</script>
+
+
+</head>
+<body>
+<h1>Keep an element above the fold with JavaScript</h1>
+<p>You may need to make your browser window smaller in order to see the script work.</p>
+<p id="fred"><a href="#" onmouseover="show('fred', contenta, 200)" onmouseout="hide('fred')">fred</a></p>
+<p id="barney"><a href="#" onmouseover="show('barney', contentb, 400)" onmouseout="hide('barney')">barney</a></p>
+<p id="wilma"><a href="#" onmouseover="show('wilma', contentc, 600)" onmouseout="hide('wilma')">wilma</a></p>
+<div id="detail"></div>
+
+<!-- <p>Detail is visible? <span id="debug"></span></p> -->
+
+
+
+
+
+</body>
+</html>
