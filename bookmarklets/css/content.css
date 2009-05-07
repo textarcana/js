@@ -1,0 +1,18 @@
+/* Time-stamp: <content.css last changed by Noah Sussman at OneMorebug.com, Saturday 16 August 2008 at PDT 14:36:46 (Serious Cat)> */
+
+body{
+	font-size: 90%;
+	line-height: 150%;
+	max-width: 40em;
+	margin: 1.5em; 
+}
+
+h1 {font-size: 180%}
+
+h2 {font-size: 130%}
+
+h3, h4, h5, h6 {font-size: 100%}
+
+code {font-size: 140%}
+
+dd, dt {padding: .3em}

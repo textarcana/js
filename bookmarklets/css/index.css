@@ -1,0 +1,296 @@
+/* Time-stamp: <index.css last changed by Noah Sussman at OneMorebug.com, Saturday 01 November 2008 at PDT 10:55:18 (Serious Cat)> */
+body { 
+    background-color: #fff ; 
+    color: #666;
+    font-family: verdana, arial, sans-serif ;
+}
+li { 
+    list-style-type: circle;
+}
+a { 
+    color: #333;  
+    text-decoration: none;
+}
+a:hover { 
+    text-decoration: underline; 
+}
+a:visited { 
+    color: #000; 
+}
+.container { 
+    left: 48px; 
+    position: absolute;
+    top: 28px;
+    width: auto;
+    height: auto;
+}
+#cloudPage .container { 
+    width: 95%;
+}
+.sillyquote {
+    top: 0.7em;
+    position: relative;
+    font-size: 70%;
+    clear: both;
+    width: 33em;
+    margin-bottom: 3em;
+}
+.sillyquote blockquote {
+margin: 1em 0 .7em 0;
+}
+.sillyquote cite {
+font-style: normal;
+margin-left: 1.5em;
+}
+.sillyquote cite em {
+font-style: italic;
+}
+h1 { 
+    font-size: 100%; 
+}
+h2 {
+    font-size: 92%; 
+    display: inline;
+}
+h2.delicious-banner { 
+    line-height: 25px;  
+}
+#noahSussman {    
+    top: 3px; 
+    position: relative;
+}
+.delicious-tags,
+#diggRss, 
+ul.rss-items,
+div#toread,
+div#toread ul {
+    border: 1px solid #eee;
+    padding: 4px;
+    top: 6px;
+    position: relative;   
+}
+#maximumCloud .delicious-tags {
+    padding: 4px;
+    top: 6px;
+    position: relative;
+    width: 100%;    
+}
+.delicious-cloud a { 
+    line-height: 116%;
+}
+#flickrAndDel{ 
+    position: absolute;
+    left: 630px;
+    top: 0;
+    width: 19em;
+    padding: 0;
+    text-align: left;
+}
+div#flickrWidget { 
+    position: absolute; 
+    top: 192px;;
+    left: 21em;
+ }
+#flickrRss { 
+    left: 0px;
+    top: 2em; 
+    position: relative;
+}
+#fcbFrame {
+    position: relative;
+    left: 170px;
+}
+
+#diggRss,
+div#toread {
+    left: 2em;
+    padding: 4px 0 1em 0;
+    text-align: center;
+    float: left;
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 0;
+    width: 30%;
+}
+/* patterns */
+div.leftAligner { 
+    width: 100%;
+    text-align: left;
+    margin: 0 0 0 4px;
+}
+li span,
+li acronym { 
+    text-transform: none;
+ }
+/* accessible hidden content */
+/* See http://webaim.org/techniques/css/invisiblecontent/ */
+.redundant,
+#noahSussman .navlist .redundant{
+    position:absolute;
+    left:0px;
+    top:-500px;
+    width:0.1em;
+    height:0.1em;
+    overflow:hidden;
+}
+/* unordered-list patterns */
+/* Main navigation UL.  From http://css.maxdesign.com.au/listamatic/horizontal04.htm */
+ul, 
+.navlist {
+    padding: 0 1px 1px;
+    margin-left: 0;
+    text-transform: lowercase;
+}
+ul li, 
+.navlist li {
+    list-style: none;
+    margin: 0;
+    border-top: none;
+    display: inline;
+}
+.validators {
+font-size: 85%;
+}
+#aboutNoah .navlist li,
+#aboutHTML .navlist li,
+#portfolio .navlist li,
+.navlist li { 
+    font-size: 80%; 
+    font-weight: normal;
+}
+#mainNav li {
+  font-size: 92%; 
+  font-weight: bold;
+  margin-left: -0.3em;
+}
+.navlist li a {
+    padding: 0.5em;
+/*    border: .3em solid white; */
+    text-decoration: none;
+}
+.navlist li a:hover {
+/*lime green    border-color: #8F6; */
+/*border-color: #f00;*/
+background: #333;
+color: #ccc;
+}
+.navlist li a.hyper { 
+    padding: 0;
+    border: 0;
+    text-decoration: none;
+}
+.navlist li a.hyper:hover { 
+    text-decoration: underline;
+}
+/* Digg RSS widget.  From  http://css.maxdesign.com.au/listamatic/vertical13.htm */
+ul.rss-items,
+div#toread ul {
+    text-transform: lowercase;
+    text-align: left;
+    list-style: none;
+    padding: 0;
+    margin: 0 4px 0 4px;
+    width: 97%;
+    font-size: 60%;
+}
+
+ul.rss-items li,
+div#toread li
+{
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+ul.rss-items li a,
+div#toread li
+ {
+    display: block;
+    width: 100%;
+    padding: 0.5em 0 0.5em 0.5em;
+    border-width: 1px;
+    border-color: #ffe #aaab9c #ccc #fff;
+    border-style: solid;
+    color: #0077AA;
+    text-decoration: none;
+}
+
+#diggRss>ul.rss-items li a { width: auto; }
+
+ul.rss-items li#active a {
+    background: #88FF66;
+}
+
+ul.rss-items li a:hover, ul.rss-items li#active a:hover {
+    background: #E6ECF2;
+    border-color: #aaab9c #fff #fff #ccc;
+}
+
+ul.rss-items li a:hover { 
+    text-decoration: underline;
+}
+
+div#toread {
+position: absolute;
+left: 630px;
+top: 0;
+width: 19em;
+padding: 0;
+text-align: left;
+}
+div#toread h2 {
+text-transform: lowercase;
+}
+div#toread ul {
+border: none;
+}
+div#toread li {
+border-right: none;
+}
+div#toread .delicious-link {
+    text-transform: capitalize;
+}
+div#toread .delicious-extended {
+
+}
+div#toread li {
+    border:none;
+}
+div#toread li.delicious-odd {
+
+}
+div#toread li.delicious-even {
+border-left:1px solid #eee;
+}
+/* RSS icon */
+.rssLink {
+
+}
+.rssLink span {
+/*
+position:absolute;
+left: -9999px;
+*/
+}
+
+/* announcements */
+
+.shout {
+  background-color: #333;
+   padding: 0.75em 0.75em 0.75em 0.3em;
+}
+
+.shout a {
+  color: white;
+  text-decoration: underline;
+}
+
+/* grow the size of the text when focused -- first time I've thought of this one */
+.shout a:hover {
+  font-size: 105%;
+}
+
+.shout,
+.shout a:visited {
+  color: #ccc;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <title>Describe Jira bookmarklet: Noah Sussman</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta content="Bookmarklets by Noah Sussman" name="description" />
+  <meta content="del.icio.us, delicious, delicious.com, bookmarklet, Atlassian Jira, productivity" name="keywords" />
+<link rel="stylesheet" type="text/css" href="../css/index.css" media="screen, projection" />
+<link rel="stylesheet" type="text/css" href="../css/content.css" media="screen, projection" />
+</head>
+
+<body id="describeJira">
+
+<p><a href="../index.html">home</a></p>
+
+<h1>Jira describe task bookmarklet</h1>
+
+Drag this link to your browser's bookmarks bar: <a href="javascript:function%20userSel()%7Bif%20(window.getSelection)%7Btxt%20=%20window.getSelection();%7Delse%20if%20(document.getSelection)%20%20%20%20%7Btxt%20=%20document.getSelection();%7Delse%20if%20(document.selection)%7Btxt%20=%20document.selection.createRange().text;%7Delse%20return;%20%20return%20txt;%7Dfunction%20add(h)%7Bb.appendChild(h);%7Dfunction%20makeTag(t)%7Breturn%20document.createElement(t);%7Dfunction%20makeText(tag,text)%7Bt=makeTag(tag);%20t.appendChild(document.createTextNode(text));%20return%20t;%7Dp=document.location;%20q=document.title.replace(/%5C[[%5E%5C]]*%5C](.*)%20-%20JAG%20JIRA/,%20'$1');%20d=window.open().document;%20d.open();%20d.close();%20b=d.body;%20d.title%20=%20q%20+%20'%20:%20summary%20:%20JIRA';%20u=p+'%5Cn'+q+'%5Cn'+userSel();%20add(makeText('style',%20'textarea%7Bwidth:100%;height:100%;%7D'));%20add(makeText('textarea',%20u));%20void%200" title="describe Jira">describe Jira</a>
+
+
+<p>Grabs the URL, TITLE, and selected text (if any) from the current page. Then makes a new window with a TEXTAREA and pastes the text into the new window.
+</p>
+<p>
+This version was designed to work with a client's Jira installation, so it filters the identifying string off the end of titles.
+</p>
+<p>
+
+In practice this bookmarklet will work on any Web page.</p>
+
+</body>
+</html>

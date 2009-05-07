@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <title>del.icio.us Whuffie Bookmarklet: Noah Sussman</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta content="A bookmarklet to add via:username to the tags field when saving a bookmark from another user." name="description" />
+  <meta content="del.icio.us, delicious, delicious.com, whuffie, bookmarklet" name="keywords" />
+<link rel="stylesheet" type="text/css" href="../css/index.css" media="screen, projection" />
+<link rel="stylesheet" type="text/css" href="../css/content.css" media="screen, projection" />
+</head>
+
+<body id="deliciousWhuffie">
+
+<h1>del.icio.us Whuffie Bookmarklet</h1>
+
+<p><a href="../index.html">home</a></p>
+
+<h2>Add the via: tag to your bookmarks</h2>
+<p>Delicious Whuffie is a bookmarklet that, when clicked, adds <code>via:username</code> to the tags field when saving a bookmark that you discovered through another Delicious user.  It is intended to be used in your <a href="http://delicious.com/help/faq#network" >network, subscriptions or inbox.</a></p>
+
+<p>I have also created (and prefer) a version of the bookmarklet that adds all of that other user&apos;s tags along with the <code>via:</code> tag.  I seem to always do that anyway when tagging with <code>via:</code></p>
+
+<h2>Install the del.icio.us Whuffie bookmarklet</h2>
+
+<dl>
+  <dt>
+    Drag this link to your browser's bookmarks toolbar (if that doesn&apos;t work try right-clicking it).  Once installed, clicking the bookmarklet will add the <code>via:</code> tag to bookmarks you save from your network and inbox.
+  </dt>
+  <dd>
+<a href="javascript:try{var savingId=YAHOO.util.Dom.getElementsByClassName('itemeditor')[0].id.replace(/^editor-wrapper-/,'');var viaUsr=YAHOO.util.Dom.getElementsByClassName('user','a',document.getElementById(savingId))[0].getElementsByTagName('span')[0].innerHTML;var tagInput=document.getElementById('tags-'+savingId);tagInput.value='via:'+viaUsr}catch(e){};void 0;">Delicious Whuffie</a>
+  </dd>
+  <dt>
+    If you'd like to add all the other user's tags in addition to the <code>via:</code> tag, drag this link to your browser's bookmarks toolbar instead:
+  </dt>
+  <dd>
+    <a href="javascript:try{var tagStr='';var savingId=YAHOO.util.Dom.getElementsByClassName('itemeditor')[0].id.replace(/^editor-wrapper-/,'');var viaUsr=YAHOO.util.Dom.getElementsByClassName('user','a',document.getElementById(savingId))[0].getElementsByTagName('span')[0].innerHTML;var usrTags=YAHOO.util.Dom.getElementsByClassName('tag-chain','ul',document.getElementById(savingId))[0].getElementsByTagName('span');for(var i=0;i<usrTags.length;i++){tagStr+=' '+usrTags[i].innerHTML}var tagInput=document.getElementById('tags-'+savingId);tagInput.value='via:'+viaUsr+tagStr}catch(e){};void 0;">Delicious Whuffie</a> (also adds tags)
+  </dd>
+</dl>
+
+<p>
+The bookmarklet has been tested on Mac and Windows in Firefox 3, <!-- Opera 9.5,--> IE 7 and Safari 3/WebKit.  <strong>Currently the &ldquo;adds tags&rdquo; version does NOT work in IE 6.</strong>  The bookmarklet <em>should</em> work in other JavaScript-capable browsers but <acronym title="your mileage may vary">YMMV</acronym>.
+</p>
+
+<p>If for some reason you can't figure out how to install the bookmarklet for your particular browser, <a href="http://delicious.com/help/bookmarklets">review these instructions for installing the official Delicious bookmarklets.</a></p>
+
+<h2>Background</h2>
+
+<h3>The via: tag</h3>
+
+<p>Early in 2007 I began to notice the sudden, if infrequent, appearance of tags that took the form of <code>via:frobnitz.</code>  Eventually I <a href="http://www.catb.org/jargon/html/G/glark.html">glarked</a> that <code>frobnitz</code> always corresponded to a Delicious user name.  Such tags were meant to convey <em>attribution for</em> a bookmark.  This was meta-data about the provenance of information.</p>
+
+<p>That interested me because I was pretty new to Delicious and one of the things on my mind all the time as I delved into other people's links was -- <em>where did all of this stuff come from?</em>  So now I knew there was at least a small community of other people who wondered about the same thing.</p>
+
+<p>At the time I was able to find only two articles about the practice: Web Worker Daily had recommended it in <a href="http://webworkerdaily.com/2007/05/10/8-tips-for-better-delicious-bookmarking/" >8 Tips for Better del.icio.us Bookmarking</a>, and that article also referenced <a href="http://aqualung.typepad.com/aqualung/2007/02/a_reputation_ec.html" >A reputation economy via &ldquo;via:&rdquo;?</a> by Ric Hayman of Aqualung.</p>
+
+<p>I used the <code>via:</code> tag pretty religiously from then on, and as I got tired of typing it I created a bookmarklet to populate it for me.  Since I knew by that time that quite a few people were using the tag, I posted the bookmarklet on my <a href="http://onemorebug.com/blog/2007/06/16/delicious-whuffie">development blog in 2007</a> and I also made  <a href="http://www.mail-archive.com/ydn-delicious@yahoogroups.com/msg03572.html" >an announcement on <acronym title="Yahoo Developers Network">YDN</acronym>-delicious.</a>  And Ric Hayman was nice enough to give <a href="http://aqualung.typepad.com/aqualung/2007/06/more_on_the_via.html" title="post about the original Delicious via tag bookmarklet">the whuffie bookmarklet a trackback</a> as well.</p>
+
+<p>Then about a year later I got <a href="http://www.nezmar.com/the-via-tag-on-delicious/" >another nice trackback from Nicola D&apos;Agostino,</a> a Web developer based in Italy.  On that comments thread, <a href="http://www.nezmar.com/the-via-tag-on-delicious#comment-32478">Engtech</a> suggested using <code>via:</code> to track the <em>originating Web site</em> for a bookmark instead.  Many of the other commenters agreed this would also be useful.  I've stuck to the strategy I started out with, but as of August 16, 2008, a query for <a href="http://delicious.com/tag/system:has:via">system:has:via</a> returns over 110,000 bookmarks; some of which refer to users and some to Web sites.  I have no immediate way of telling which approach is more prevalent.  Something to look into in the future.</p>
+
+<h3>Cory Doctorow coined Whuffie</h3>
+
+<p>The word <a href="http://en.wikipedia.com/wiki/whuffie" title="Whuffie in Wikipedia">&ldquo;whuffie&rdquo;</a> describes a unit of currency for a global reputation-based economy in Cory Doctorow's post-scarcity sci-fi story <a href="http://craphound.com/down/download.php" title="free download of the full text by Cory Doctorow"><em>Down and Out in the Magic Kingdom.</em></a>  I first encountered the term on Ric Hayman's original post about the <code>via:</code> tag.</p>
+
+</body>
+</html>
